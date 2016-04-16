@@ -1,0 +1,695 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn//css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo,node,git,github," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="佳旺的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="一直以来，都想开通一个blog,一是记录一下工作与生活，二是分享一些自己的idea。先后尝试了qq空间，简书等等，最大的问题就是没有控制权，寄人篱下。自己购买域名和空间，又太麻烦，直到静态blog生成器进入了视野。去年开始使用github pages的时候看到了官方推荐的Jekyll时就留意了一下，最近趁着项目的测试期，终于有空开始了，于是又搜索了一下blog生成器，发现了更加轻巧的hexo。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我搭建了 hexo blog!">
+<meta property="og:url" content="http://ljwrer.github.io/2016/04/16/build-hexo-blog/index.html">
+<meta property="og:site_name" content="佳旺的博客">
+<meta property="og:description" content="一直以来，都想开通一个blog,一是记录一下工作与生活，二是分享一些自己的idea。先后尝试了qq空间，简书等等，最大的问题就是没有控制权，寄人篱下。自己购买域名和空间，又太麻烦，直到静态blog生成器进入了视野。去年开始使用github pages的时候看到了官方推荐的Jekyll时就留意了一下，最近趁着项目的测试期，终于有空开始了，于是又搜索了一下blog生成器，发现了更加轻巧的hexo。">
+<meta property="og:image" content="http://ljwrer.github.io/images/ruby.jpg">
+<meta property="og:image" content="http://ljwrer.github.io/images/js.jpg">
+<meta property="og:image" content="http://ljwrer.github.io/images/hexo.svg">
+<meta property="og:updated_time" content="2016-04-16T11:05:11.122Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我搭建了 hexo blog!">
+<meta name="twitter:description" content="一直以来，都想开通一个blog,一是记录一下工作与生活，二是分享一些自己的idea。先后尝试了qq空间，简书等等，最大的问题就是没有控制权，寄人篱下。自己购买域名和空间，又太麻烦，直到静态blog生成器进入了视野。去年开始使用github pages的时候看到了官方推荐的Jekyll时就留意了一下，最近趁着项目的测试期，终于有空开始了，于是又搜索了一下blog生成器，发现了更加轻巧的hexo。">
+<meta name="twitter:image" content="http://ljwrer.github.io/images/ruby.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6273297473951761000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 我搭建了 hexo blog! | 佳旺的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?53a3d36a8267a542f2f5b563a210ce40";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">佳旺的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Welcome Home,Good Hunter</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                我搭建了 hexo blog!
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T15:13:21+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日记/" itemprop="url" rel="index">
+                    <span itemprop="name">日记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/16/build-hexo-blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/build-hexo-blog/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一直以来，都想开通一个blog,一是记录一下工作与生活，二是分享一些自己的idea。先后尝试了qq空间，简书等等，最大的问题就是没有控制权，寄人篱下。自己购买域名和空间，又太麻烦，直到静态blog生成器进入了视野。</p><p>去年开始使用github pages的时候看到了官方推荐的Jekyll时就留意了一下，最近趁着项目的测试期，终于有空开始了，于是又搜索了一下blog生成器，发现了更加轻巧的hexo。<br><a id="more"></a><br>hexo有哪些好处呢：</p><ul><li>完全的Markdown支持，编写方便，即时预览</li><li>众多极简风格的皮肤</li><li>一键部署</li><li>搭配github pages完全免费，不用购买域名和服务器了。。。</li><li>完全的控制权</li><li>Node.js强力驱动，极快的生成速度</li></ul><p>尤其是最后一点，对于一枚前端狗来说，今年FEDAY怎么说的：<br><img src="/images/ruby.jpg"><br><img src="/images/js.jpg"><br>能用js解决的问题都用js解决，ruby神马的闪边去。。。</p><p>hexo的部署非常简单，只要几条简单的指令，再设置好github pages就OK了。我选择了<a href="http://theme-next.iissnan.com" title="next" target="_blank" rel="external">next</a>主题，极简的风格，而且作者非常勤奋的解决issue，强力推荐。当然部署的过程中也遇到了几个要注意的地方:</p><ol><li>所有的配置文件都要在冒号后接空格，包括yml和markdown内的配置</li><li>你需要的大部分功能，都有现成的插件可以解决，比如资源压缩，安装<code>hexo-all-minifier</code>就好了，无需额外的操作，在部署时会自动压缩</li><li>最后就是远程部署的问题,首先参考知乎的问题<blockquote><footer><strong>CrazyMilk的回答</strong><cite><a href="http://zhihu.com/question/21193762/answer/79109280" target="_blank" rel="external">使用hexo，如果换了电脑怎么更新博客？</a></cite></footer></blockquote></li></ol><p>建立两个分支，需要deploy的内容放到master分支，source内容放到hexo分支然后ignore掉deploy的内容。回到家以后，git clone，发现next主题不见了，原来next也是一个git，提交时会被忽略掉。当然，删掉next下的<code>.git</code>就可以提交了，但是我又想保持和线上的更新，怎么办呢，使用fork+submodule+pull request:</p><h2 id="fork"><a href="#fork" class="headerlink" title="fork"></a>fork</h2><p>首先将主题的repo fork 到你的github账号下，以hexo为例，这时next的github地址为<br></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@github.com:yourname/hexo-theme-next.git</span><br></pre></td></tr></table></figure><p></p><h2 id="添加submodule"><a href="#添加submodule" class="headerlink" title="添加submodule"></a>添加submodule</h2><figure class="highlight plain"><figcaption><span>path/to/yourname.github.io master</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git submodule add git@github.com:yourname/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure><h2 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h2><p>将作者的repo pull request 到你的账号，然后<br></p><figure class="highlight plain"><figcaption><span>path/to/yourname.github.io/themes/next master</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd path/to/yourname.github.io/themes/next</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure><p></p><h2 id="提交主题"><a href="#提交主题" class="headerlink" title="提交主题"></a>提交主题</h2><figure class="highlight plain"><figcaption><span>path/to/yourname.github.io/themes/next master</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cd path/to/yourname.github.io/themes/next</span><br><span class="line">$ git add &lt;stuff&gt;</span><br><span class="line">$ git commit -m &quot;comment&quot;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>path/to/yourname.github.io/</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cd path/to/yourname.github.io</span><br><span class="line">$ git add themes/next</span><br><span class="line">$ git commit -m &quot;updated my theme next&quot;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure><h2 id="远程部署"><a href="#远程部署" class="headerlink" title="远程部署"></a>远程部署</h2><figure class="highlight plain"><figcaption><span>bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ cd path/to/</span><br><span class="line">$ git clone &lt;url&gt;</span><br><span class="line">$ git submodule init</span><br><span class="line">$ git submodule update</span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo new post &lt;title&gt;</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure><p>总的来说，如下图所示：<br><img src="/images/hexo.svg"></p><p>好啦，终于有自己的小窝了，接下来要做的事情就是Keep Blogging!</p>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
+          
+            <a href="/tags/node/" rel="tag">#node</a>
+          
+            <a href="/tags/git/" rel="tag">#git</a>
+          
+            <a href="/tags/github/" rel="tag">#github</a>
+          
+        </div>
+      
+
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/16/build-hexo-blog/"
+           data-title="我搭建了 hexo blog!" data-url="http://ljwrer.github.io/2016/04/16/build-hexo-blog/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpeg"
+               alt="Rmaiy" />
+          <p class="site-author-name" itemprop="name">Rmaiy</p>
+          <p class="site-description motion-element" itemprop="description">Greatness from small beginnings</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ljwrer" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1257301111" target="_blank" title="微博">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/index-zplane" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fork"><span class="nav-number">1.</span> <span class="nav-text">fork</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加submodule"><span class="nav-number">2.</span> <span class="nav-text">添加submodule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新主题"><span class="nav-number">3.</span> <span class="nav-text">更新主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交主题"><span class="nav-number">4.</span> <span class="nav-text">提交主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程部署"><span class="nav-number">5.</span> <span class="nav-text">远程部署</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rmaiy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ljwrer"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
