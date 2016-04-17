@@ -10,6 +10,10 @@ tags:
 
 ---
 
+<div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'>
+<img src="/images/avatar.jpeg" width='700'>
+</div>
+
 一直以来，都想开通一个blog,一是记录一下工作与生活，二是分享一些自己的idea。先后尝试了qq空间，简书等等，最大的问题就是没有控制权，寄人篱下。自己购买域名和空间，又太麻烦，直到静态blog生成器进入了视野。
 
 去年开始使用github pages的时候看到了官方推荐的Jekyll时就留意了一下，最近趁着项目的测试期，终于有空开始了，于是又搜索了一下blog生成器，发现了更加轻巧的hexo。
@@ -27,7 +31,7 @@ hexo有哪些好处呢：
 <img src="/images/js.jpg"/>
 能用js解决的问题都用js解决，ruby神马的闪边去。。。
 
-hexo的部署非常简单，只要几条简单的指令，再设置好github pages就OK了。我选择了[next](http://theme-next.iissnan.com "next")主题，极简的风格，而且作者非常勤奋的解决issue，强力推荐。当然部署的过程中也遇到了几个要注意的地方:
+hexo的部署非常简单，只要几条指令，再设置好github pages就OK了。我选择了[next](http://theme-next.iissnan.com "next")主题，极简的风格，而且作者非常勤奋的解决issue，强力推荐。当然部署的过程中也遇到了几个要注意的地方:
  1. 所有的配置文件都要在冒号后接空格，包括yml和markdown内的配置
  2. 你需要的大部分功能，都有现成的插件可以解决，比如资源压缩，安装`hexo-all-minifier`就好了，无需额外的操作，在部署时会自动压缩
  3. 最后就是远程部署的问题,首先参考知乎的问题
